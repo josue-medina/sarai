@@ -245,6 +245,37 @@
       .open-invitation { transition: none; }
     }
 
+
+    /* Guirnaldas florales más abundantes y de trazo grueso en todas las secciones */
+    section { position: relative; isolation: isolate; overflow: hidden; }
+    section > * { position: relative; z-index: 1; }
+    section::before, section::after {
+      content: ""; position: absolute; z-index: 0; width: clamp(145px, 28vw, 260px);
+      aspect-ratio: 1; background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20260%20260%22%3E%3Cg%20stroke%3D%22%237d1427%22%20stroke-width%3D%225.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M16%20248%20C58%20197%2066%20151%20113%20110%20S180%2049%20240%2014%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M53%20207%20C14%20205%2014%20170%2044%20167%20C68%20165%2078%20188%2053%20207Z%22%20fill%3D%22%236f7e58%22%2F%3E%3Cpath%20d%3D%22M86%20159%20C50%20149%2057%20119%2082%20123%20C105%20127%20107%20147%2086%20159Z%22%20fill%3D%22%238b9a6c%22%2F%3E%3Cpath%20d%3D%22M130%20105%20C103%2079%20119%2054%20143%2069%20C163%2082%20154%20102%20130%20105Z%22%20fill%3D%22%236f7e58%22%2F%3E%3Cpath%20d%3D%22M175%2065%20C150%2039%20170%2019%20190%2034%20C207%2048%20197%2062%20175%2065Z%22%20fill%3D%22%238b9a6c%22%2F%3E%3C%2Fg%3E%3Cg%20stroke%3D%22%237d1427%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M68%20102%20C37%2083%2047%2049%2073%2052%20C84%2023%20116%2037%20113%2062%20C141%2073%20126%20106%20101%20104%20C90%20122%2073%20116%2068%20102Z%22%20fill%3D%22%23a91f38%22%2F%3E%3Cpath%20d%3D%22M69%2080%20C67%2064%2083%2059%2091%2072%20C102%2055%20117%2072%20105%2084%20C115%2099%2093%20108%2083%2094%20C73%20103%2059%2091%2069%2080Z%22%20fill%3D%22%23d45c70%22%2F%3E%3Cpath%20d%3D%22M157%20184%20C130%20169%20137%20141%20160%20143%20C171%20119%20198%20134%20194%20155%20C219%20166%20205%20194%20183%20190%20C171%20207%20157%20199%20157%20184Z%22%20fill%3D%22%23f8f1e8%22%2F%3E%3Cpath%20d%3D%22M158%20166%20C157%20151%20173%20147%20180%20160%20C192%20145%20205%20163%20194%20173%20C204%20187%20184%20195%20175%20183%20C164%20193%20151%20180%20158%20166Z%22%20fill%3D%22%23e7cfd0%22%2F%3E%3Cpath%20d%3D%22M210%20114%20C191%20102%20197%2083%20213%2085%20C224%2067%20242%2079%20239%2095%20C256%20105%20246%20122%20230%20119%20C220%20131%20211%20124%20210%20114Z%22%20fill%3D%22%23c64a61%22%2F%3E%3Cpath%20d%3D%22M211%20102%20C211%2092%20221%2089%20226%2098%20C235%2089%20244%20101%20235%20108%20C242%20118%20229%20124%20222%20115%20C215%20122%20205%20112%20211%20102Z%22%20fill%3D%22%23e7a1aa%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"); background-repeat: no-repeat;
+      background-size: contain; opacity: .32; pointer-events: none;
+    }
+    section::before { top: -20px; left: -20px; transform: rotate(-9deg); }
+    section::after { bottom: -24px; right: -18px; transform: rotate(171deg); }
+    .section-light::before, .section-light::after { opacity: .24; }
+    .section-wine::before, .section-wine::after { opacity: .38; }
+    .button { gap: 10px; border-width: 1.5px; position: relative; }
+    .button::before { content: "✿"; font-size: 1.15rem; line-height: 1; color: var(--berry); }
+    .section-wine .button::before { color: var(--rose); }
+    .button:hover::before { transform: rotate(-12deg) scale(1.12); }
+    .event-card { position: relative; }
+    .event-card::before, .event-card::after { content: "❧"; position: absolute; color: #a52a40; font-size: 2.5rem; line-height: 1; opacity: .72; }
+    .event-card::before { top: 5px; left: 8px; transform: rotate(-35deg); }
+    .event-card::after { bottom: 5px; right: 8px; transform: rotate(145deg); }
+    .dress-box { position: relative; }
+    .dress-box::before, .dress-box::after { content: "✿"; position: absolute; font-size: 2rem; color: var(--rose); opacity: .8; }
+    .dress-box::before { top: -17px; left: 12px; }
+    .dress-box::after { bottom: -17px; right: 12px; }
+    @media (max-width: 480px) {
+      section::before, section::after { width: 145px; opacity: .23; }
+      .section-wine::before, .section-wine::after { opacity: .28; }
+      .event-card::before, .event-card::after { font-size: 2rem; }
+    }
+
     @media (min-width: 700px) {
       .hero { min-height: 850px; }
       section { padding: 100px 48px; }
@@ -275,7 +306,46 @@
         <path d="M25 27 C12 9 31 -1 42 12 C52 0 69 13 56 29 C48 38 35 36 25 27Z"/>
         <path d="M29 26 C36 18 43 17 49 25 C42 28 36 29 29 26Z"/>
       </g>
-    </svg>
+    
+      <g stroke-linecap="round" stroke-linejoin="round">
+        <!-- Burgundy rose -->
+        <g transform="translate(76 45)" stroke="#d88a94" stroke-width="1.3" fill="#781426" fill-opacity=".72">
+          <path d="M0 17 C-17 8 -13 -8 0 -7 C10 -20 26 -8 21 3 C35 12 22 28 9 23 C2 30 -10 25 0 17Z"/>
+          <path d="M0 12 C-9 4 -3 -5 5 -1 C14 -8 20 1 13 7 C17 15 7 20 0 12Z" fill="#a51d31"/>
+          <path d="M4 7 C1 1 8 -1 10 4 C13 8 7 12 4 7Z" fill="#4a0d18"/>
+        </g>
+        <!-- Ivory rose -->
+        <g transform="translate(35 102)" stroke="#f8f1e8" stroke-width="1.2" fill="#f8f1e8" fill-opacity=".88">
+          <path d="M0 14 C-15 8 -12 -7 0 -6 C9 -17 22 -7 19 3 C31 10 21 24 8 20 C1 27 -8 22 0 14Z"/>
+          <path d="M0 10 C-7 3 -2 -4 5 -1 C12 -7 18 1 12 6 C15 13 6 17 0 10Z" fill="#e7cfd0"/>
+          <path d="M3 6 C1 1 7 -1 9 3 C11 7 6 10 3 6Z" fill="#d88a94"/>
+        </g>
+        <!-- Blush rose -->
+        <g transform="translate(119 157)" stroke="#e7cfd0" stroke-width="1.3" fill="#d88a94" fill-opacity=".8">
+          <path d="M0 15 C-16 8 -12 -7 0 -6 C10 -18 24 -7 20 3 C33 11 22 25 9 21 C2 28 -9 23 0 15Z"/>
+          <path d="M0 11 C-8 4 -2 -4 5 -1 C13 -7 19 1 13 7 C16 14 7 18 0 11Z" fill="#f8f1e8"/>
+          <path d="M3 6 C1 1 7 -1 9 3 C12 7 6 11 3 6Z" fill="#a51d31"/>
+        </g>
+        <!-- Small red rosebud -->
+        <g transform="translate(177 224)" stroke="#d88a94" stroke-width="1.2" fill="#a51d31">
+          <path d="M0 12 C-12 4 -7 -8 1 -5 C9 -13 18 -3 12 5 C11 13 4 16 0 12Z"/>
+          <path d="M1 6 C-3 1 3 -3 7 1 C10 5 5 9 1 6Z" fill="#d88a94"/>
+        </g>
+        <!-- Soft sage leaves -->
+        <g stroke="#b6a99b" stroke-width="1.1" fill="#71806b" fill-opacity=".65">
+          <path d="M54 63 C30 38 18 55 35 69 C43 75 50 70 54 63Z"/>
+          <path d="M52 62 L34 53"/>
+          <path d="M96 76 C119 55 132 74 111 85 C102 90 97 84 96 76Z"/>
+          <path d="M99 77 L117 69"/>
+          <path d="M92 133 C69 111 57 129 76 141 C84 146 89 140 92 133Z"/>
+          <path d="M90 132 L73 123"/>
+          <path d="M144 181 C166 158 180 177 159 190 C151 195 146 189 144 181Z"/>
+          <path d="M147 181 L166 172"/>
+          <path d="M169 242 C146 224 136 243 155 253 C163 257 168 250 169 242Z"/>
+          <path d="M166 241 L149 234"/>
+        </g>
+      </g>
+</svg>
     <svg class="welcome-flower right" viewBox="0 0 300 300" fill="none" aria-hidden="true">
       <g stroke="#e7cfd0" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M14 15 C70 55 68 108 113 137 C143 156 157 191 164 259"/>
@@ -292,7 +362,46 @@
         <path d="M25 27 C12 9 31 -1 42 12 C52 0 69 13 56 29 C48 38 35 36 25 27Z"/>
         <path d="M29 26 C36 18 43 17 49 25 C42 28 36 29 29 26Z"/>
       </g>
-    </svg>
+    
+      <g stroke-linecap="round" stroke-linejoin="round">
+        <!-- Burgundy rose -->
+        <g transform="translate(76 45)" stroke="#d88a94" stroke-width="1.3" fill="#781426" fill-opacity=".72">
+          <path d="M0 17 C-17 8 -13 -8 0 -7 C10 -20 26 -8 21 3 C35 12 22 28 9 23 C2 30 -10 25 0 17Z"/>
+          <path d="M0 12 C-9 4 -3 -5 5 -1 C14 -8 20 1 13 7 C17 15 7 20 0 12Z" fill="#a51d31"/>
+          <path d="M4 7 C1 1 8 -1 10 4 C13 8 7 12 4 7Z" fill="#4a0d18"/>
+        </g>
+        <!-- Ivory rose -->
+        <g transform="translate(35 102)" stroke="#f8f1e8" stroke-width="1.2" fill="#f8f1e8" fill-opacity=".88">
+          <path d="M0 14 C-15 8 -12 -7 0 -6 C9 -17 22 -7 19 3 C31 10 21 24 8 20 C1 27 -8 22 0 14Z"/>
+          <path d="M0 10 C-7 3 -2 -4 5 -1 C12 -7 18 1 12 6 C15 13 6 17 0 10Z" fill="#e7cfd0"/>
+          <path d="M3 6 C1 1 7 -1 9 3 C11 7 6 10 3 6Z" fill="#d88a94"/>
+        </g>
+        <!-- Blush rose -->
+        <g transform="translate(119 157)" stroke="#e7cfd0" stroke-width="1.3" fill="#d88a94" fill-opacity=".8">
+          <path d="M0 15 C-16 8 -12 -7 0 -6 C10 -18 24 -7 20 3 C33 11 22 25 9 21 C2 28 -9 23 0 15Z"/>
+          <path d="M0 11 C-8 4 -2 -4 5 -1 C13 -7 19 1 13 7 C16 14 7 18 0 11Z" fill="#f8f1e8"/>
+          <path d="M3 6 C1 1 7 -1 9 3 C12 7 6 11 3 6Z" fill="#a51d31"/>
+        </g>
+        <!-- Small red rosebud -->
+        <g transform="translate(177 224)" stroke="#d88a94" stroke-width="1.2" fill="#a51d31">
+          <path d="M0 12 C-12 4 -7 -8 1 -5 C9 -13 18 -3 12 5 C11 13 4 16 0 12Z"/>
+          <path d="M1 6 C-3 1 3 -3 7 1 C10 5 5 9 1 6Z" fill="#d88a94"/>
+        </g>
+        <!-- Soft sage leaves -->
+        <g stroke="#b6a99b" stroke-width="1.1" fill="#71806b" fill-opacity=".65">
+          <path d="M54 63 C30 38 18 55 35 69 C43 75 50 70 54 63Z"/>
+          <path d="M52 62 L34 53"/>
+          <path d="M96 76 C119 55 132 74 111 85 C102 90 97 84 96 76Z"/>
+          <path d="M99 77 L117 69"/>
+          <path d="M92 133 C69 111 57 129 76 141 C84 146 89 140 92 133Z"/>
+          <path d="M90 132 L73 123"/>
+          <path d="M144 181 C166 158 180 177 159 190 C151 195 146 189 144 181Z"/>
+          <path d="M147 181 L166 172"/>
+          <path d="M169 242 C146 224 136 243 155 253 C163 257 168 250 169 242Z"/>
+          <path d="M166 241 L149 234"/>
+        </g>
+      </g>
+</svg>
     <div class="welcome-inner">
       <p class="welcome-kicker">Una invitación especial</p>
       <h1 class="welcome-title" id="welcomeTitle">Sarai</h1>
@@ -334,7 +443,46 @@
           <path d="M23 24 C17 18 20 12 26 13 C31 14 31 20 23 24Z"/>
           <path d="M42 12 C40 20 43 25 49 25"/>
         </g>
-      </svg>
+      
+      <g stroke-linecap="round" stroke-linejoin="round">
+        <!-- Burgundy rose -->
+        <g transform="translate(76 45)" stroke="#d88a94" stroke-width="1.3" fill="#781426" fill-opacity=".72">
+          <path d="M0 17 C-17 8 -13 -8 0 -7 C10 -20 26 -8 21 3 C35 12 22 28 9 23 C2 30 -10 25 0 17Z"/>
+          <path d="M0 12 C-9 4 -3 -5 5 -1 C14 -8 20 1 13 7 C17 15 7 20 0 12Z" fill="#a51d31"/>
+          <path d="M4 7 C1 1 8 -1 10 4 C13 8 7 12 4 7Z" fill="#4a0d18"/>
+        </g>
+        <!-- Ivory rose -->
+        <g transform="translate(35 102)" stroke="#f8f1e8" stroke-width="1.2" fill="#f8f1e8" fill-opacity=".88">
+          <path d="M0 14 C-15 8 -12 -7 0 -6 C9 -17 22 -7 19 3 C31 10 21 24 8 20 C1 27 -8 22 0 14Z"/>
+          <path d="M0 10 C-7 3 -2 -4 5 -1 C12 -7 18 1 12 6 C15 13 6 17 0 10Z" fill="#e7cfd0"/>
+          <path d="M3 6 C1 1 7 -1 9 3 C11 7 6 10 3 6Z" fill="#d88a94"/>
+        </g>
+        <!-- Blush rose -->
+        <g transform="translate(119 157)" stroke="#e7cfd0" stroke-width="1.3" fill="#d88a94" fill-opacity=".8">
+          <path d="M0 15 C-16 8 -12 -7 0 -6 C10 -18 24 -7 20 3 C33 11 22 25 9 21 C2 28 -9 23 0 15Z"/>
+          <path d="M0 11 C-8 4 -2 -4 5 -1 C13 -7 19 1 13 7 C16 14 7 18 0 11Z" fill="#f8f1e8"/>
+          <path d="M3 6 C1 1 7 -1 9 3 C12 7 6 11 3 6Z" fill="#a51d31"/>
+        </g>
+        <!-- Small red rosebud -->
+        <g transform="translate(177 224)" stroke="#d88a94" stroke-width="1.2" fill="#a51d31">
+          <path d="M0 12 C-12 4 -7 -8 1 -5 C9 -13 18 -3 12 5 C11 13 4 16 0 12Z"/>
+          <path d="M1 6 C-3 1 3 -3 7 1 C10 5 5 9 1 6Z" fill="#d88a94"/>
+        </g>
+        <!-- Soft sage leaves -->
+        <g stroke="#b6a99b" stroke-width="1.1" fill="#71806b" fill-opacity=".65">
+          <path d="M54 63 C30 38 18 55 35 69 C43 75 50 70 54 63Z"/>
+          <path d="M52 62 L34 53"/>
+          <path d="M96 76 C119 55 132 74 111 85 C102 90 97 84 96 76Z"/>
+          <path d="M99 77 L117 69"/>
+          <path d="M92 133 C69 111 57 129 76 141 C84 146 89 140 92 133Z"/>
+          <path d="M90 132 L73 123"/>
+          <path d="M144 181 C166 158 180 177 159 190 C151 195 146 189 144 181Z"/>
+          <path d="M147 181 L166 172"/>
+          <path d="M169 242 C146 224 136 243 155 253 C163 257 168 250 169 242Z"/>
+          <path d="M166 241 L149 234"/>
+        </g>
+      </g>
+</svg>
       <svg class="floral bottom-right" viewBox="0 0 300 300" fill="none" aria-hidden="true">
         <g stroke="#e7cfd0" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M14 15 C70 55 68 108 113 137 C143 156 157 191 164 259"/>
@@ -354,7 +502,46 @@
           <path d="M25 27 C12 9 31 -1 42 12 C52 0 69 13 56 29 C48 38 35 36 25 27Z"/>
           <path d="M29 26 C36 18 43 17 49 25 C42 28 36 29 29 26Z"/>
         </g>
-      </svg>
+      
+      <g stroke-linecap="round" stroke-linejoin="round">
+        <!-- Burgundy rose -->
+        <g transform="translate(76 45)" stroke="#d88a94" stroke-width="1.3" fill="#781426" fill-opacity=".72">
+          <path d="M0 17 C-17 8 -13 -8 0 -7 C10 -20 26 -8 21 3 C35 12 22 28 9 23 C2 30 -10 25 0 17Z"/>
+          <path d="M0 12 C-9 4 -3 -5 5 -1 C14 -8 20 1 13 7 C17 15 7 20 0 12Z" fill="#a51d31"/>
+          <path d="M4 7 C1 1 8 -1 10 4 C13 8 7 12 4 7Z" fill="#4a0d18"/>
+        </g>
+        <!-- Ivory rose -->
+        <g transform="translate(35 102)" stroke="#f8f1e8" stroke-width="1.2" fill="#f8f1e8" fill-opacity=".88">
+          <path d="M0 14 C-15 8 -12 -7 0 -6 C9 -17 22 -7 19 3 C31 10 21 24 8 20 C1 27 -8 22 0 14Z"/>
+          <path d="M0 10 C-7 3 -2 -4 5 -1 C12 -7 18 1 12 6 C15 13 6 17 0 10Z" fill="#e7cfd0"/>
+          <path d="M3 6 C1 1 7 -1 9 3 C11 7 6 10 3 6Z" fill="#d88a94"/>
+        </g>
+        <!-- Blush rose -->
+        <g transform="translate(119 157)" stroke="#e7cfd0" stroke-width="1.3" fill="#d88a94" fill-opacity=".8">
+          <path d="M0 15 C-16 8 -12 -7 0 -6 C10 -18 24 -7 20 3 C33 11 22 25 9 21 C2 28 -9 23 0 15Z"/>
+          <path d="M0 11 C-8 4 -2 -4 5 -1 C13 -7 19 1 13 7 C16 14 7 18 0 11Z" fill="#f8f1e8"/>
+          <path d="M3 6 C1 1 7 -1 9 3 C12 7 6 11 3 6Z" fill="#a51d31"/>
+        </g>
+        <!-- Small red rosebud -->
+        <g transform="translate(177 224)" stroke="#d88a94" stroke-width="1.2" fill="#a51d31">
+          <path d="M0 12 C-12 4 -7 -8 1 -5 C9 -13 18 -3 12 5 C11 13 4 16 0 12Z"/>
+          <path d="M1 6 C-3 1 3 -3 7 1 C10 5 5 9 1 6Z" fill="#d88a94"/>
+        </g>
+        <!-- Soft sage leaves -->
+        <g stroke="#b6a99b" stroke-width="1.1" fill="#71806b" fill-opacity=".65">
+          <path d="M54 63 C30 38 18 55 35 69 C43 75 50 70 54 63Z"/>
+          <path d="M52 62 L34 53"/>
+          <path d="M96 76 C119 55 132 74 111 85 C102 90 97 84 96 76Z"/>
+          <path d="M99 77 L117 69"/>
+          <path d="M92 133 C69 111 57 129 76 141 C84 146 89 140 92 133Z"/>
+          <path d="M90 132 L73 123"/>
+          <path d="M144 181 C166 158 180 177 159 190 C151 195 146 189 144 181Z"/>
+          <path d="M147 181 L166 172"/>
+          <path d="M169 242 C146 224 136 243 155 253 C163 257 168 250 169 242Z"/>
+          <path d="M166 241 L149 234"/>
+        </g>
+      </g>
+</svg>
       <div class="hero-content fade-up">
         <p class="eyebrow">Una noche para recordar</p>
         <p class="intro">Con el corazón lleno de ilusión, te invito a celebrar un momento muy especial de mi vida.</p>
